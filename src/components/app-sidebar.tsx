@@ -93,16 +93,17 @@ const staggerChildren = {
 }
 
 const childVariants = {
-    hidden: {opacity: 0, x: -20},
+    hidden: { opacity: 0, x: -20 },
     visible: {
         opacity: 1,
         x: 0,
         transition: {
             duration: 0.3,
-            ease: [0.04, 0.62, 0.23, 0.98]
+            ease: "easeOut" as const  // ❌ Problème ici
         }
     }
 }
+
 
 // Helper function to determine if a user can access certain content based on role hierarchy
 const canAccess = (userRole: Role, requiredRole: Role): boolean => {
