@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  alpha-app:
+  e-zaha-app:
     build:
       context: .
       dockerfile: Dockerfile
