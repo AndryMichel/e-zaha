@@ -4,41 +4,16 @@ import {getToken} from "next-auth/jwt";
 
 export async function middleware(request: NextRequest) {
     const {pathname} = request.nextUrl;
-    // const url = request.nextUrl.clone();
-
-    // Liste des routes publiques à rediriger vers /login
-    const publicRoutes = [
-        '/',
-        '/directeur',
-        '/historique',
-        '/mission',
-        '/juridique',
-        '/organigramme',
-        '/partenaires',
-        '/objectifs',
-        '/ressources',
-        '/galerie',
-        '/contact',
-        '/textes',
-        '/document',
-        '/igl',
-        '/finance',
-        '/structure',
-        '/planification',
-        '/odd'
-    ];
 
     // Vérifier si le chemin contient un PDF ou est dans le dossier documents
     if (pathname.includes('.pdf') || pathname.includes('/documents/')) {
         return NextResponse.next();
     }
 
-    // ⚠️ REDIRECTION DES PAGES PUBLIQUES VERS /login
-    if (publicRoutes.some(route => pathname === route || pathname.startsWith(`${route}/`))) {
-        return NextResponse.redirect(new URL('/login', request.url));
-    }
+    // Routes d'authentification
+    const authRoutes = ['/login', '/register'];
 
-    // Vérifier si le chemin commence par "/dashboard"
+    // Routes du dashboard (privées)
     const isAdminPath = pathname.startsWith("/dashboard");
 
     // Récupérer le token depuis les cookies
@@ -55,13 +30,13 @@ export async function middleware(request: NextRequest) {
     }
 
     // Si l'utilisateur est déjà connecté et essaie d'accéder aux pages d'auth
-    if ((pathname === "/login" || pathname === "/register") && token) {
+    if (authRoutes.includes(pathname) && token) {
         return NextResponse.redirect(new URL("/dashboard", request.url));
     }
 
+    // Gérer les en-têtes CORS pour les routes API
     const requestHeaders = new Headers(request.headers);
 
-    // Add CORS headers to Next.js API routes
     if (request.nextUrl.pathname.startsWith('/api/')) {
         const response = NextResponse.next({
             request: {
@@ -76,6 +51,7 @@ export async function middleware(request: NextRequest) {
         return response;
     }
 
+    // Permettre l'accès à toutes les autres routes (publiques)
     return NextResponse.next();
 }
 
@@ -85,36 +61,6 @@ export const config = {
         "/dashboard/:path*",
         "/login",
         "/register",
-        '/',
-        '/directeur/:path*',
-        '/historique/:path*',
-        '/mission/:path*',
-        '/juridique/:path*',
-        '/organigramme/:path*',
-        '/partenaires/:path*',
-        '/objectifs/:path*',
-        '/ressources/:path*',
-        '/galerie/:path*',
-        '/contact/:path*',
-        '/textes/:path*',
-        '/document/:path*',
-        '/directeur',
-        '/historique',
-        '/mission',
-        '/juridique',
-        '/organigramme',
-        '/partenaires',
-        '/objectifs',
-        '/ressources',
-        '/galerie',
-        '/contact',
-        '/textes',
-        '/document',
-        '/igl',
-        '/finance',
-        '/structure',
-        '/planification',
-        '/odd',
         '/api/:path*'
     ],
 };
