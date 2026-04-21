@@ -37,9 +37,7 @@ export const MotDirPage = () => {
 
                             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                                 <p className="text-justify">
-                                    Pilier central du développement territorial, le Ministère de la
-                                    Décentralisation
-                                    et de l&#39;Aménagement du Territoire (MDAT) assure la mise en œuvre efficace du
+                                    Pilier central du développement territorial, le &#39;interieur et de la Décentralisation (MID) assure la mise en œuvre efficace du
                                     Plan
                                     National de Décentralisation Emergente (PNDE), moteur de la transformation
                                     socio-économique de notre pays.L&#39;Observatoire de la Décentralisation

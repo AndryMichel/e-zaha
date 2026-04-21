@@ -74,8 +74,7 @@ export const JuridiquePage = () => {
                                     Cadre Légal
                                 </h2>
                                 <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                                    L’ODDL est une entité rattachée au Ministère de la Décentralisation et de
-                                    l’aménagement de territoire (MDAT). Il est chargé de collecter et d’analyser des
+                                    L’ODDL est une entité rattachée au Ministère de l&#39;interieur et de la Décentralisation (MID). Il est chargé de collecter et d’analyser des
                                     données sur la gouvernance locale et orienter les politiques publiques.
                                 </p>
 

@@ -230,7 +230,7 @@ export function PublicNavbar() {
                                     <div
                                         className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200"/>
                                     <Image
-                                        src="/assets/oddl.jpg"
+                                        src="/assets/oddl.jpeg"
                                         alt="ODDL Logo"
                                         width={85}
                                         height={85}
