@@ -2,7 +2,7 @@
 
 // URLs de base configurées via variables d'environnement
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-export const IMAGE_BASE_URL = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "https://observatoireddl.mg";
+export const IMAGE_BASE_URL = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "https://api.observatoireddl.mg";
 
 // Configuration des URLs pour les images
 export const IMAGE_CONFIG = {

@@ -2,14 +2,17 @@ import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
     output: 'standalone',
-
-    // 🖼️ Configuration pour les images externes
     images: {
         remotePatterns: [
             {
                 protocol: 'https',
                 hostname: 'observatoireddl.mg',
-                port: '',
+                pathname: '/uploads/**',
+            },
+            // ✅ AJOUTER
+            {
+                protocol: 'https',
+                hostname: 'api.observatoireddl.mg',
                 pathname: '/uploads/**',
             },
             {
@@ -18,16 +21,8 @@ const nextConfig: NextConfig = {
                 port: '8000',
                 pathname: '/uploads/**',
             },
-            {
-                protocol: 'http',
-                hostname: '0.0.0.0',
-                port: '8000',
-                pathname: '/uploads/**',
-            }
         ],
     },
-
-    // Ensure large PDF files are correctly handled
     webpack: (config) => {
         config.module.rules.push({
             test: /\.(pdf)$/i,
