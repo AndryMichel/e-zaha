@@ -39,7 +39,7 @@ export const MotDirPage = () => {
                                 <p className="text-justify">
                                     Pilier central du développement territorial, Ministère de l&#39;interieur et de la Décentralisation (MID) assure la mise en œuvre efficace du
                                     Plan
-                                    National de Décentralisation Emergente (PNDE), moteur de la transformation
+                                    National de Décentralisation Emergente (PNDDL), moteur de la transformation
                                     socio-économique de notre pays.L&#39;Observatoire de la Décentralisation
                                     et
                                     du Développement Local est un dispositif stratégique qui permet d&#39;assurer le

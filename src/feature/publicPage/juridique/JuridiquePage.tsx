@@ -31,7 +31,7 @@ export const JuridiquePage = () => {
             icon: Users,
             title: "Coordination avec les institutions nationales",
             description: [
-                "Les directions et services du MDAT",
+                "Les directions et services du MID",
                 "Les Collectivités Territoriales Décentralisées (CTD)",
                 "Les ministères sectoriels"
             ]
@@ -114,7 +114,7 @@ export const JuridiquePage = () => {
                             </h3>
                         </div>
                         <p className="text-lg text-gray-700 leading-relaxed">
-                            L’ODDL est une entité rattachée au MDAT et placée sous l’autorité du Ministre en charge de
+                            L’ODDL est une entité rattachée au MID et placée sous l’autorité du Ministre en charge de
                             la Décentralisation.
 
                         </p>
